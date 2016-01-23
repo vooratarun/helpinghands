@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+		#f1{
+				 
+			position: relative;	
+			width:1200px;
+			margin-left:inherit;
+			margin-right:inherit;
+			text-align:justify;		
+			height:auto;
+			}
+
+
+				#h2{
+				text-align:center;				
+				color:red;
+				font-size:36px;
+				font-family:Adobe Gothic Std;
+				}
+			#p{
+			font-family:Adobe Arabic; 
+			position: relative;	
+			width:1330px;
+			text-align:justify;		
+			height:auto;
+			color: #903;
+			font-size:30px;
+			}
+
+			#p2{
+			font-family:Adobe Arabic; 
+			position: relative;	
+			width:1330px;
+			margin-left:auto;
+			margin-right:auto;
+			text-align:justify;		
+			height:auto;
+			color: #0080C0;
+			font-size:26px;
+}
+			#s1{
+			font-family:Adobe Gothic Std; 
+			position: relative;	
+			margin-left:inherit;
+			margin-right:inherit;
+			text-align:justify;		
+			height:auto;
+			color:#0080C0;
+			font-size:28px;
+			}
+			#bg
+			{
+			background-image:url(images/logo_n.png);
+			background-repeat:no-repeat;
+			background-position:center;
+			top:50px;
+				}
+
+
+

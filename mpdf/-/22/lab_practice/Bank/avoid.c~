@@ -1,0 +1,71 @@
+#include<stdio.h>
+main(){
+	int m,n,i,j,count,count2,p=0,k,c3,r,s;
+	printf("Enter Number of Processes & Resources ? ");
+	scanf("%d%d",&n,&m);
+	int allocation[n][m],max[n][m],avail[m],need[n][m],finish[n],add=0,safe[n];
+	printf("Enter Availability Matrix\n");
+	for(i=0;i<m;i++){
+		scanf("%d",&avail[i]);
+	}
+	
+	printf("\nEnter Allocation Matrix\n");
+	for(i=0;i<n;i++){
+		finish[i]=0;
+		for(j=0;j<m;j++){
+			scanf("%d",&allocation[i][j]);
+		}
+	}
+	
+	printf("\nEnter Maximum Matrix\n");
+	for(i=0;i<n;i++){
+		for(j=0;j<m;j++){
+			scanf("%d",&max[i][j]);
+		}
+	}
+	
+	//calculating need matrix max-allocation
+	for(i=0;i<n;i++){
+		for(j=0;j<m;j++){
+			need[i][j]=max[i][j]-allocation[i][j];
+		}
+	}
+	int done=0;
+	while(p<n){	
+	done=0;
+	for(i=0;i<n;i++){
+		count=0,count2=0;
+		for(j=0;j<m;j++){
+			if(need[i][j]<=avail[j] && finish[i]!=1) count++;
+		}
+		if(count==m){
+			done=1;
+			for(j=0;j<m;j++){
+				allocation[i][j]=allocation[i][j]+need[i][j];
+				avail[j]=avail[j]-need[i][j];
+				
+				if(allocation[i][j]==max[i][j]){ 
+				count2++;
+				}
+			}
+		}
+		if(count2==m){
+			for(r=0;r<m;r++)
+				avail[r]=avail[r]+allocation[i][r];	
+			finish[i]==1;
+			
+			safe[p]=i;
+			p++;
+		}
+	}
+	if (done==0) break;
+}
+if(done==0) printf("dead lock\n");
+else{printf("Safe Sequence\n");
+for(i=0;i<n;i++)
+	printf("%d ",safe[i]);}
+printf("\n");
+}
+	
+	
+

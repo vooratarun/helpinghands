@@ -1,0 +1,15 @@
+with both system calls and functions:-
+{
+	keyboard->monitor
+	keyboard->file
+	file->monitor
+	file->file
+	head
+	tail
+	alternatively mergesss
+}
+ls command
+fork()
+vfork()
+display pid,ppid
+execl,execv,execve,execle,exelp,exevp

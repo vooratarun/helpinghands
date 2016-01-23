@@ -1,0 +1,21 @@
+with both system calls and functions:-
+{
+	keyboard->monitor
+	keyboard->file
+	file->monitor
+	file->file
+	head
+	tail
+	alternatively merge
+}
+Scheduling algorithms
+
+ls command
+recursive ls command
+fork()
+vfork()
+display pid
+execl,execv,execveexecle,exelp,exevp
+stat,fstat
+program to display type of a file
+program to display file permissions

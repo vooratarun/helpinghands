@@ -1,0 +1,46 @@
+<?php
+session_start();
+include("authenticate.php");
+$idno = $_POST['idno'];
+$pwd = $_POST['pwd'];
+
+if(substr_count($idno,"N14"))
+{
+$o=mysql_query("SELECT ID FROM usersdata WHERE ID='$idno'");
+$_SESSION['usr_reg']=$idno;
+echo "<script>window.location.href='user_reg.php';</script>";
+}
+else
+{
+$q1 = "SELECT ID FROM usersdata WHERE ID='$idno'";
+$result = mysql_query($q1,$con);
+$row = mysql_fetch_array($result);
+if (count($row) != 2){
+	$q="SELECT userID,password FROM users WHERE userID='$idno'";
+	$result = mysql_query($q,$con);
+	$row = mysql_fetch_array($result);
+
+	if ($row[0]==$idno && $row[1] == $pwd){
+		$_SESSION['healthcampid']=$idno;
+		echo "<script>window.location.href='movehealth/index.php'</script>";
+		
+		
+	}else{
+		echo <<<s
+		<script>
+			alert("Invalid Credentials Entered. Please Try Again...");
+			window.location="../healthcamp/index.php";
+	   </script>
+s;
+    
+	}
+	
+}else{
+	$_SESSION['healthcampid']=$idno;
+		echo "<script>window.location.href='movehealth/index.php'</script>";
+     echo <<<s2
+   
+s2;
+}
+}
+?>

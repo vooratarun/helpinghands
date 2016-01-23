@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>Student_info</title>
+<script type="text/javascript" src="jquery.js"></script>
+<style>
+td.input 
+{
+	height:5px;	
+}
+td#one
+{
+
+	color:green;
+	font-size:1.5em;
+}
+
+</style>
+<script>
+//alert("some");
+function validate()
+{
+	var idno=document.getElementById("idno");
+	var name=document.getElementById("name");
+	var email=document.getElementById("mail");
+	var phno=document.getElementById("phno");
+	var area=document.getElementById("inte");
+	var first=document.getElementById("first");
+	var second=document.getElementById("second");
+	var third=document.getElementById("third");
+	var check1=document.getElementById("check1");
+	var check2=document.getElementById("check2");
+
+	alert(check2.checked);
+	if(idno.value=="" || idno.value==" ")
+	{
+		$("#error").html('Enter your IdNO ').show(500).animate({scrollTop:0},3000);	
+		idno.focus();
+		return false;
+	}
+	if(name.value=="" || name.value==" ")
+	{
+		$("#error").html('Enter your Name ').show(500).animate({scrollTop:0},3000);	
+		name.focus();
+		return false;
+	}
+	if(email.value=="" || email.value==" ")
+		{
+			$("#error").html('Enter your Email').show(500).animate({scrollTop:0},3000);	
+			email.focus();
+			return false;
+		}
+	if(phno.value=="" || phno.value==" ")
+		{
+			$("#error").html('Enter your Phno ').show(500).animate({scrollTop:0},3000);	
+			phno.focus();
+			return false;
+		}
+	if(area.value=="" || area.value==" ")
+		{
+			$("#error").html('Enter Interested Area ').show(500).animate({scrollTop:0},3000);	
+			area.focus();
+			return false;
+		}
+	if(first.value=="preference-1")
+		{
+			$("#error").html('Select preference -1 ').show(500).animate({scrollTop:0},3000);	
+			first.focus();
+			return false;
+		}
+	if(second.value=="preference-2")
+			{
+				$("#error").html('Select preference -2 ').show(500).animate({scrollTop:0},3000);	
+				second.focus();
+				return false;
+			}
+	if(third.value=="preference-3")
+			{
+				$("#error").html('Select preference -3 ').show(500).animate({scrollTop:0},3000);	
+				third.focus();
+				return false;
+			}
+	if( (check1.checked=="false") && (check2.checked=="false") )
+	{
+	$("#error").html('One Should be checked ').show(500).animate({scrollTop:0},3000);	
+				//third.focus();
+				alert(check1.checked);
+				return false;
+	}
+
+else	
+ {
+
+
+
+ }
+}
+
+
+	
+</script>
+</head>
+<body><center><br><br>
+<div id="error">Enter details</div>
+<form method="post">
+<table>
+
+<tr ><td id="one">IdNo </td><td><input class="input" type="text" maxlength=7  id="idno" name="idno"></td></tr>
+<tr ><td id="one">Name </td><td><input   class="input"type="text"  id="name" name="name"></td></tr>
+<tr ><td id="one">Email</td><td><input  class="input" type="text"   id="mail" name="mail"></td></tr>
+<tr ><td id="one">Phno </td><td><input   class="input"type="text" maxlength=10  id="phno" name="phno"></td></tr>
+<tr ><td id="one">Area Of Interest</td><td><input  class="input" type="text"  id="inte" name="inte"></td></tr>
+<tr ><td id="one">Interested Location</td>
+<td ><select name="first" id="first"><option>preference-1</option><option>Hyderabad</option>
+<option>Vijayawada</option>
+<option>Vizag</option> </select>
+<select name="second" id="second"><option>preference-2</option><option>Hyderabad</option>
+<option>Vijayawada</option>
+<option>Vizag</option> </select>
+<select name="third" id="third"><option>preference-3</option><option>Hyderabad</option>
+<option>Vijayawada</option>
+<option>Vizag</option> </td>
+</tr>
+<tr> <td id="one"> Do You Have Internship?</td>
+<td> Yes:<input type="radio" id="check1" name="internship"> 
+ No:<input type="radio" id="check2" name="internship"> </td></tr>
+</table>
+
+<button type="submit" name="submit" onclick="return validate();">Submit</button>
+</form>
+
+</body>
+</html>

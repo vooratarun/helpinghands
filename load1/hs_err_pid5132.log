@@ -1,0 +1,189 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d889c46, pid=5132, tid=7456
+#
+# Java VM: Java HotSpot(TM) Client VM (10.0-b22 mixed mode windows-x86)
+# Problematic frame:
+# V  [jvm.dll+0x19c46]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x04727800):  VMThread [stack: 0x048a0000,0x04aa0000] [id=7456]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+
+Registers:
+EAX=0x0625f778, EBX=0x00000015, ECX=0x00000000, EDX=0x00000000
+ESP=0x04a9fbfc, EBP=0x13787160, ESI=0x00000000, EDI=0x05f3c400
+EIP=0x6d889c46, EFLAGS=0x00010202
+
+Top of Stack: (sp=0x04a9fbfc)
+0x04a9fbfc:   0b60f4cc 0b60f4cc 04727a48 04727a40
+0x04a9fc0c:   00000015 04727a48 6d9b6b12 02255918
+0x04a9fc1c:   778f2738 6d88a3bf 00000011 00000000
+0x04a9fc2c:   00000000 0a47b000 04726240 6da2f9ff
+0x04a9fc3c:   0b60f4cc 04726240 04727a40 00000000
+0x04a9fc4c:   00000078 00000000 019db1de 04727e34
+0x04a9fc5c:   6da2ec91 00000005 02258ad0 00000000
+0x04a9fc6c:   00000000 00000001 53989bec 04727a48 
+
+Instructions: (pc=0x6d889c46)
+0x6d889c36:   85 c9 7e 67 8d 9b 00 00 00 00 8b 48 0c 8b 0c b1
+0x6d889c46:   39 29 75 09 8b 51 04 c7 02 00 00 00 00 8b 08 46 
+
+
+Stack: [0x048a0000,0x04aa0000],  sp=0x04a9fbfc,  free space=2046k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x19c46]
+
+VM_Operation (0x0b60f4cc): RevokeBias, mode: safepoint, requested by thread 0x0a47b000
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0a479000 JavaThread "Inactive RequestProcessor thread [Was:Indexer Cache/org.netbeans.modules.parsing.impl.indexing.IndexerCache$Tracker]" daemon [_thread_blocked, id=3052, stack(0x0b890000,0x0ba90000)]
+  0x0a478400 JavaThread "Thread-3" daemon [_thread_blocked, id=5640, stack(0x0b650000,0x0b850000)]
+  0x0a47b000 JavaThread "VersioningAnnotator.annotationRefresh" daemon [_thread_blocked, id=5272, stack(0x0b410000,0x0b610000)]
+  0x0622bc00 JavaThread "Image Fetcher 0" daemon [_thread_blocked, id=6436, stack(0x0acc0000,0x0aec0000)]
+  0x04737c00 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=3784, stack(0x09c10000,0x09e10000)]
+  0x06013c00 JavaThread "AWT-Windows" daemon [_thread_in_native, id=6032, stack(0x09a10000,0x09c10000)]
+  0x06013400 JavaThread "AWT-Shutdown" [_thread_blocked, id=3188, stack(0x09810000,0x09a10000)]
+  0x06001000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=4576, stack(0x091e0000,0x093e0000)]
+  0x05fd6800 JavaThread "Active Reference Queue Daemon" daemon [_thread_blocked, id=7732, stack(0x08e80000,0x09080000)]
+  0x05f3d800 JavaThread "main" [_thread_blocked, id=6916, stack(0x08c40000,0x08e40000)]
+  0x05f3c400 JavaThread "VersioningAnnotator.annotationRefresh" daemon [_thread_blocked, id=7596, stack(0x08a00000,0x08c00000)]
+  0x05f3bc00 JavaThread "CLI Requests Server" daemon [_thread_in_native, id=6212, stack(0x087c0000,0x089c0000)]
+  0x05a93000 JavaThread "Timer-0" daemon [_thread_blocked, id=3628, stack(0x05ca0000,0x05ea0000)]
+  0x04749400 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=4180, stack(0x05620000,0x05820000)]
+  0x04745800 JavaThread "CompilerThread0" daemon [_thread_blocked, id=1272, stack(0x053e0000,0x055e0000)]
+  0x04745000 JavaThread "Attach Listener" daemon [_thread_blocked, id=7984, stack(0x051a0000,0x053a0000)]
+  0x04740800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3128, stack(0x04f60000,0x05160000)]
+  0x0472b800 JavaThread "Finalizer" daemon [_thread_blocked, id=4508, stack(0x04d20000,0x04f20000)]
+  0x0472a800 JavaThread "Reference Handler" daemon [_thread_blocked, id=6868, stack(0x04ae0000,0x04ce0000)]
+  0x02259800 JavaThread "main" [_thread_blocked, id=6540, stack(0x00090000,0x00290000)]
+
+Other Threads:
+=>0x04727800 VMThread [stack: 0x048a0000,0x04aa0000] [id=7456]
+  0x0475cc00 WatcherThread [stack: 0x05860000,0x05a60000] [id=6616]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x02258b90/0x00000118] Threads_lock - owner thread: 0x04727800
+
+Heap
+ def new generation   total 2304K, used 368K [0x10050000, 0x102d0000, 0x127b0000)
+  eden space 2048K,   8% used [0x10050000, 0x10079a98, 0x10250000)
+  from space 256K,  78% used [0x10290000, 0x102c2870, 0x102d0000)
+  to   space 256K,   0% used [0x10250000, 0x10250000, 0x10290000)
+ tenured generation   total 30272K, used 18372K [0x127b0000, 0x14540000, 0x30050000)
+   the space 30272K,  60% used [0x127b0000, 0x139a1200, 0x139a1200, 0x14540000)
+ compacting perm gen  total 32768K, used 23590K [0x30050000, 0x32050000, 0x3c850000)
+   the space 32768K,  71% used [0x30050000, 0x31759a60, 0x31759c00, 0x32050000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x0046a000 	C:\Program Files (x86)\NetBeans 6.9.1\bin\netbeans.exe
+0x77890000 - 0x779e7000 	C:\Windows\SYSTEM32\ntdll.dll
+0x75730000 - 0x75860000 	C:\Windows\SYSTEM32\KERNEL32.DLL
+0x75b00000 - 0x75ba6000 	C:\Windows\SYSTEM32\KERNELBASE.dll
+0x76270000 - 0x76321000 	C:\Windows\SYSTEM32\msvcrt.dll
+0x75910000 - 0x759be000 	C:\Windows\SYSTEM32\ADVAPI32.DLL
+0x751e0000 - 0x752f6000 	C:\Windows\SYSTEM32\USER32.dll
+0x75dd0000 - 0x75e04000 	C:\Windows\SYSTEM32\sechost.dll
+0x75f90000 - 0x7603c000 	C:\Windows\SYSTEM32\RPCRT4.dll
+0x750e0000 - 0x751dd000 	C:\Windows\SYSTEM32\GDI32.dll
+0x74f30000 - 0x74f4c000 	C:\Windows\SYSTEM32\SspiCli.dll
+0x74f20000 - 0x74f29000 	C:\Windows\SYSTEM32\CRYPTBASE.dll
+0x74ec0000 - 0x74f11000 	C:\Windows\SYSTEM32\bcryptPrimitives.dll
+0x75bb0000 - 0x75bd0000 	C:\Windows\system32\IMM32.DLL
+0x765c0000 - 0x7669c000 	C:\Windows\SYSTEM32\MSCTF.dll
+0x10000000 - 0x10042000 	C:\Program Files (x86)\NetBeans 6.9.1\platform\lib\nbexec.dll
+0x72eb0000 - 0x72f57000 	C:\Windows\system32\apphelp.dll
+0x6d870000 - 0x6dac0000 	C:\Program Files (x86)\Java\jdk1.6.0_06\jre\bin\client\jvm.dll
+0x74000000 - 0x74021000 	C:\Windows\SYSTEM32\WINMM.dll
+0x7c340000 - 0x7c396000 	C:\Program Files (x86)\Java\jdk1.6.0_06\jre\bin\MSVCR71.dll
+0x73fc0000 - 0x73fea000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x6d320000 - 0x6d328000 	C:\Program Files (x86)\Java\jdk1.6.0_06\jre\bin\hpi.dll
+0x75330000 - 0x75336000 	C:\Windows\SYSTEM32\PSAPI.DLL
+0x6d820000 - 0x6d82c000 	C:\Program Files (x86)\Java\jdk1.6.0_06\jre\bin\verify.dll
+0x6d3c0000 - 0x6d3df000 	C:\Program Files (x86)\Java\jdk1.6.0_06\jre\bin\java.dll
+0x6d860000 - 0x6d86f000 	C:\Program Files (x86)\Java\jdk1.6.0_06\jre\bin\zip.dll
+0x6d620000 - 0x6d633000 	C:\Program Files (x86)\Java\jdk1.6.0_06\jre\bin\net.dll
+0x756e0000 - 0x75730000 	C:\Windows\SYSTEM32\WS2_32.dll
+0x75bd0000 - 0x75bd8000 	C:\Windows\SYSTEM32\NSI.dll
+0x74dc0000 - 0x74e0a000 	C:\Windows\system32\mswsock.dll
+0x6d640000 - 0x6d649000 	C:\Program Files (x86)\Java\jdk1.6.0_06\jre\bin\nio.dll
+0x73420000 - 0x73442000 	C:\Windows\SYSTEM32\iphlpapi.dll
+0x73410000 - 0x73418000 	C:\Windows\SYSTEM32\WINNSI.DLL
+0x73400000 - 0x73410000 	C:\Windows\SYSTEM32\dhcpcsvc6.DLL
+0x733e0000 - 0x733f2000 	C:\Windows\SYSTEM32\dhcpcsvc.DLL
+0x74610000 - 0x7462a000 	C:\Windows\SYSTEM32\CRYPTSP.dll
+0x745d0000 - 0x7460e000 	C:\Windows\system32\rsaenh.dll
+0x72ce0000 - 0x72cfb000 	C:\Windows\SYSTEM32\USERENV.dll
+0x73d00000 - 0x73d11000 	C:\Windows\SYSTEM32\profapi.dll
+0x74490000 - 0x744a0000 	C:\Windows\system32\napinsp.dll
+0x74470000 - 0x74484000 	C:\Windows\system32\pnrpnsp.dll
+0x74460000 - 0x74470000 	C:\Windows\system32\NLAapi.dll
+0x74640000 - 0x746b5000 	C:\Windows\SYSTEM32\DNSAPI.dll
+0x74450000 - 0x74459000 	C:\Windows\System32\winrnr.dll
+0x70330000 - 0x70337000 	C:\Windows\System32\rasadhlp.dll
+0x702f0000 - 0x7032f000 	C:\Windows\System32\fwpuclnt.dll
+0x6d0b0000 - 0x6d1de000 	C:\Program Files (x86)\Java\jdk1.6.0_06\jre\bin\awt.dll
+0x73b30000 - 0x73b90000 	C:\Windows\SYSTEM32\WINSPOOL.DRV
+0x75340000 - 0x75459000 	C:\Windows\SYSTEM32\ole32.dll
+0x759c0000 - 0x75af6000 	C:\Windows\SYSTEM32\combase.dll
+0x6fbc0000 - 0x6fe04000 	C:\Windows\AppPatch\AcGenral.DLL
+0x75d90000 - 0x75dd0000 	C:\Windows\SYSTEM32\SHLWAPI.dll
+0x73c40000 - 0x73cc8000 	C:\Windows\SYSTEM32\UxTheme.dll
+0x71350000 - 0x71362000 	C:\Windows\SYSTEM32\samcli.dll
+0x75460000 - 0x754eb000 	C:\Windows\SYSTEM32\OLEAUT32.dll
+0x73360000 - 0x73374000 	C:\Windows\SYSTEM32\MSACM32.dll
+0x73450000 - 0x73458000 	C:\Windows\SYSTEM32\VERSION.dll
+0x766a0000 - 0x77765000 	C:\Windows\SYSTEM32\SHELL32.dll
+0x73760000 - 0x73779000 	C:\Windows\SYSTEM32\dwmapi.dll
+0x75e70000 - 0x75f8e000 	C:\Windows\SYSTEM32\urlmon.dll
+0x73340000 - 0x73353000 	C:\Windows\SYSTEM32\MPR.dll
+0x760d0000 - 0x7626b000 	C:\Windows\SYSTEM32\iertutil.dll
+0x763b0000 - 0x76569000 	C:\Windows\SYSTEM32\WININET.dll
+0x74d40000 - 0x74db5000 	C:\Windows\SYSTEM32\SHCORE.DLL
+0x6d2c0000 - 0x6d313000 	C:\Program Files (x86)\Java\jdk1.6.0_06\jre\bin\fontmanager.dll
+0x6d7d0000 - 0x6d7f2000 	C:\Program Files (x86)\Java\jdk1.6.0_06\jre\bin\splashscreen.dll
+0x6d200000 - 0x6d22f000 	C:\Program Files (x86)\Java\jdk1.6.0_06\jre\bin\cmm.dll
+0x6d460000 - 0x6d484000 	C:\Program Files (x86)\Java\jdk1.6.0_06\jre\bin\jpeg.dll
+0x004e0000 - 0x004e8000 	C:\Program Files (x86)\Internet Download Manager\idmmkb.dll
+0x75660000 - 0x756d4000 	C:\Windows\SYSTEM32\clbcatq.dll
+0x6d570000 - 0x6d579000 	C:\Program Files (x86)\Java\jdk1.6.0_06\jre\bin\management.dll
+
+VM Arguments:
+jvm_args: -Dnetbeans.importclass=org.netbeans.upgrade.AutoUpgrade -Dnetbeans.accept_license_class=org.netbeans.license.AcceptLicense -client -Xss2m -Xms32m -XX:PermSize=32m -XX:MaxPermSize=200m -Dapple.laf.useScreenMenuBar=true -Dapple.awt.graphics.UseQuartz=true -Dsun.java2d.noddraw=true -Xmx512m -Djdk.home=C:\Program Files (x86)\Java\jdk1.6.0_06 -splash:C:\Users\Santosh\.netbeans\6.9\var\cache\splash.png -Dnetbeans.home=C:\Program Files (x86)\NetBeans 6.9.1\platform -Dnetbeans.user=C:\Users\Santosh\.netbeans\6.9 -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=C:\Users\Santosh\.netbeans\6.9\var\log\heapdump.hprof -Dnetbeans.system_http_proxy=DIRECT -Dsun.awt.keepWorkingSetOnMinimize=true -Dnetbeans.dirs=C:\Program Files (x86)\NetBeans 6.9.1\nb;C:\Program Files (x86)\NetBeans 6.9.1\ergonomics;C:\Program Files (x86)\NetBeans 6.9.1\ide;C:\Program Files (x86)\NetBeans 6.9.1\java;C:\Program Files (x86)\NetBeans 6.9.1\xml;C:\Program Files (x86)\NetBeans 6.9.1\apisupport;C:\Program Files (x86)\NetBeans 6.9.1\webcommon;C:\Program Files (x86)\NetBeans 6.9.1\websvccommon;C:\Program Files (x86)\NetBeans 6.9.1\enterprise;C:\Program Files (x86)\NetBeans 6.9.1\mobility;C:\Program Files (x86)\NetBeans 6.9.1\profiler;C:\Program Files (x86)\NetBeans 6.9.1\ruby;C:\Program Files (x86)\NetBeans 6.9.1\python;C:\Program Files (x86)\NetBeans 6.9.1\php;C:\Program Files (x86)\NetBeans 6.9.1\visualweb;C:\Program Files (x86)\NetBeans 6.9.1\soa;C:\Program Files (x86)\NetBeans 6.9.1\identity;C:\Program Files (x86)\NetBeans 6.9.1\uml;C:\Program Files (x86)\NetBeans 6.9.1\harness;C:\Program Files (x86)\NetBeans 6.9.1\cnd;C:\Program Files (x86)\NetBeans 6.9.1\dlight;C:\Program Files (x86)\NetBeans 6.9.1\groovy;C:\Program Files (x86)\NetBeans 6.9.1\extra;C:\Program Files (x86)\NetBeans 6.9.1\javafx;C:\Program Files (x86)\NetBeans 6.9.1\javacard 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+PATH=C:\Program Files\AuthenTec TrueSuite\;C:\Program Files\AuthenTec TrueSuite\x86;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\
+USERNAME=Santosh
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 6.2 Build 9200 
+
+CPU:total 4 (8 cores per cpu, 2 threads per core) family 6 model 10 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, ht
+
+Memory: 4k page, physical 3946720k(2622728k free), swap 4194303k(4194303k free)
+
+vm_info: Java HotSpot(TM) Client VM (10.0-b22) for windows-x86 JRE (1.6.0_06-b02), built on Mar 25 2008 01:22:05 by "java_re" with MS VC++ 7.1
+
+time: Wed Sep 11 22:09:58 2013
+elapsed time: 6 seconds
+

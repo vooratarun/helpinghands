@@ -1,0 +1,120 @@
+body{
+background-color: #CCCCCC;
+}
+#logintable{
+	position:absolute;
+	top: 100px;
+	left: 500px;
+	border: solid 10px #FFFFFF;
+	-moz-border-radius : 20px;
+	-moz-box-shadow: 1px 1px 30px 15px black;
+	width: 400px;
+	height: 220px;
+	padding: 10px;
+}
+#optionstable{
+	position:absolute;
+	top:180px;
+	left: 500px;
+	border: solid 1px blue;
+	-moz-border-radius : 20px;
+	/*-moz-box-shadow: 1px 1px 10px 5px #FFFFFF;*/
+	width: 400px;
+	height: 220px;
+	padding: 10px;
+}
+td.label1{
+width: 300px;
+azimuth: right;
+font-family: Verdana; 
+font-weight: bold;
+font-size: 22px;
+color:#6666FF;
+}
+td.errormessage{
+width: 300px;
+azimuth: right;
+font:Georgia;
+font-size: 16px;
+color: #FFFFFF;
+}
+input.field{
+height:30px;
+}
+input.loginsubmit{border: medium none;  
+font-size:16px; 
+text-transform:uppercase; 
+background-color:green;
+position:relative;  top:10px; 
+color:white; 
+font-family:Verdana; 
+font-weight:bold ;
+text-decoration:none; 
+width:150px; 
+height:32px;
+margin-top:0px; 
+cursor:pointer;
+}
+input.loginsubmit:hover{
+background-color:yellow;
+color:blue;
+}
+#message{
+position:absolute;
+top: 50px;
+left: 300px;
+}
+#options{
+position:absolute;
+top: 200px;
+left: 450px;
+
+}
+#maintable{
+height: 600px;
+width: 900px;
+border: solid 10px #CCCCCC;
+-moz-border-radius: 60px ;
+-moz-box-shadow: 1px 1px 20px 30px white;
+padding: 20px;
+}
+#para1{
+font-family:Arial, Helvetica, sans-serif;
+letter-spacing:0.5px;
+font-size: 16px;
+color:blue;
+position: absolute;
+left: 350px;
+top:60px;
+
+}
+#para2{
+font-family: Arial, Helvetica, sans-serif;
+letter-spacing:0.5px;
+font-size: 16px;
+color:blue;
+position: absolute;
+left: 350px;
+top:380px;
+
+}
+#para3{
+font-family: Arial, Helvetica, sans-serif;
+letter-spacing:0.5px;
+font-size: 16px;
+color:blue;
+position: absolute;
+
+left: 350px;
+top:480px;
+}
+.td{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:16px;
+color:#333333;
+font-weight:bold;
+}
+.td1{
+width: 50px;
+azimuth:center;
+}

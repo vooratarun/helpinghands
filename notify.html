@@ -1,0 +1,40 @@
+<html>
+<head><title>login</title>
+<script>
+function validate(){
+var x=document.getElementById('name').value.length;
+var y=document.getElementById('pass').value.length;
+if(x<=0||y<=0){
+		alert("Please enter valid username & password");
+		document.getElementById('name').focus();
+		return false;
+}
+
+}
+</script>
+<style>
+	#container{
+		postion:absolute;
+		margin-top:15%;
+		margin-left:35%;
+		margin-right:15%;
+		margin-bottom:15%;
+		
+	}
+	body{
+		background-color:#f2f2f2;
+	}
+</style>
+</head>
+<body>
+<div id='main'>
+		<div id='container'>
+		<form action="check.php" method=POST>
+		<table style='background-color:orange;width:400px;height:200px;'><tr style='background-color:black;color:white;'><th colspan=2><h2>Authentication</h2></th></tr><tr style='text-align:center;'><td>Username:</td><td><input type=text name=name id=name></td>
+			</tr>
+			<tr style='text-align:center;'><td>Password:</td><td><input type=password name=pass id=pass></td></tr>
+			<tr style='text-align:center;'><td></td><td><input type=submit onclick='return validate()' value='Login'></td>
+			</table>
+			</form>
+		</div>
+</div>

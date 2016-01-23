@@ -1,0 +1,3 @@
+<?
+echo "UNRESTRICED ACCESS FROM USERS";
+?>
